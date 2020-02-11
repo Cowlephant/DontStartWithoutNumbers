@@ -1,10 +1,18 @@
-﻿using System;
+﻿using NodaTime;
+using System;
 
 namespace DSWN.SharedKernel
 {
-    // source: https://github.com/ardalis/CleanArchitecture
     public abstract class BaseDomainEvent
     {
-        public DateTime DateOccurred { get; protected set; } = DateTime.UtcNow;
+        protected readonly IClock clock;
+
+        public BaseDomainEvent(IClock clock)
+        {
+            this.clock = clock;
+            DateOcurred = clock.GetCurrentInstant().InUtc().LocalDateTime;
+        }
+
+        public LocalDateTime DateOcurred { get; protected set; }
     }
 }

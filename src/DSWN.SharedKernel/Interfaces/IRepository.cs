@@ -3,7 +3,7 @@
 namespace DSWN.SharedKernel.Interfaces
 {
     // source: https://github.com/ardalis/CleanArchitecture
-    public interface IRepository<TId>
+    public interface IRepository<TId> where TId : struct
     {
         T GetById<T>(TId id) where T : BaseEntity<TId>;
         List<T> List<T>() where T : BaseEntity<TId>;

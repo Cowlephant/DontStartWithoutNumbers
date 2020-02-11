@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DSWN.Core.Worldbuilding.Interfaces
+namespace DSWN.Core.SectorCreation.Interfaces
 {
     public class IPlanetarySystemRepository : IRepository<Guid>
     {
