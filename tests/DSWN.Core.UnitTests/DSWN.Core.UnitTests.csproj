@@ -11,6 +11,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\src\DSWN.Core\DSWN.Core.csproj" />
       <ProjectReference Include="..\..\src\DSWN.SharedKernel\DSWN.SharedKernel.csproj" />
+      <ProjectReference Include="..\DSWN.SharedKernel.UnitTests\DSWN.SharedKernel.UnitTests.csproj" />
     </ItemGroup>
 
 </Project>
