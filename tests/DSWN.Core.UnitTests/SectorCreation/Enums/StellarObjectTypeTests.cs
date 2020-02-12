@@ -1,33 +1,16 @@
 ﻿using DSWN.Core.SectorCreation.Enums;
-using DSWN.SharedKernel;
-using System.Linq;
+using DSWN.SharedKernel.UnitTests;
 using Xunit;
 
 namespace DSWN.Core.UnitTests.SectorCreation.Enums
 {
     public class StellarObjectTypeTests
     {
-        public StellarObjectTypeTests() { }
-
         [Fact]
-        public void StellarObject_ShouldNotHaveDuplicateEnumIds()
+        public void Enum_DefinitionsShouldBeValid_WhenDefined()
         {
-            var ids = SystemType.GetIds();
-            var distinctIds = ids.Distinct().Count();
-
-            var expected = ids.Count();
-
-            Assert.Equal(expected, distinctIds);
-        }
-
-        [Fact]
-        public void StellarObject_ShouldHaveConsecutiveEnumIds()
-        {
-            var ids = SystemType.GetIds();
-
-            var isConsecutive = TestHelpers.IsConsecutive(ids);
-
-            Assert.True(isConsecutive);
+            EnumTests<StellarObjectType>.Enum_ShouldNotHaveDuplicateIds();
+            EnumTests<StellarObjectType>.Enum_ShouldHaveConsecutiveEnumIds();
         }
     }
 }
