@@ -2,7 +2,7 @@
 using DSWN.SharedKernel;
 using System;
 
-namespace DSWN.Core.SectorCreation.Entities
+namespace DSWN.Core.SectorCreation.Entities.SectorAggregate
 {
     /// <summary>
     /// Planetary Systems are the building blocks of a Sector, usually connected together via

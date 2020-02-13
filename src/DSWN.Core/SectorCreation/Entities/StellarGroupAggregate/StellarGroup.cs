@@ -1,15 +1,16 @@
-﻿using DSWN.SharedKernel;
+﻿using DSWN.Core.SectorCreation.Interfaces;
+using DSWN.SharedKernel;
 using System;
 using System.Collections.Generic;
 
-namespace DSWN.Core.SectorCreation.Entities
+namespace DSWN.Core.SectorCreation.Entities.StellarGroupAggregate
 {
     /// <summary>
     /// A Stellar Group is the singlular or pair of stars in a Planetary System that all other objects
     /// in the system orbit around. These groups may themselves contain a Stellar Group to model
     /// trinary, quaternary or greater systems in a hierarchy.
     /// </summary>
-    public class StellarGroup: BaseEntity<Guid>
+    public class StellarGroup: BaseEntity<Guid>, IAggregateRoot
     {
         public StellarObject Primary { get; private set; }
         public StellarObject? Secondary { get; private set; }

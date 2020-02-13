@@ -2,7 +2,7 @@
 using DSWN.SharedKernel;
 using System;
 
-namespace DSWN.Core.SectorCreation.Entities
+namespace DSWN.Core.SectorCreation.Entities.StellarGroupAggregate
 {
     /// <summary>
     /// A Stellar Object is a sun or other massive space object such as a black hole. These objects

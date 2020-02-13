@@ -1,4 +1,5 @@
-﻿using DSWN.SharedKernel;
+﻿using DSWN.Core.SectorCreation.Interfaces;
+using DSWN.SharedKernel;
 using System;
 
 namespace DSWN.Core.SectorCreation.Entities
@@ -9,7 +10,7 @@ namespace DSWN.Core.SectorCreation.Entities
     /// rarely they may orbit around an individual star of a binary pair as a 
     /// non-circumbinary object (S-Type).
     /// </summary>
-    public class SubstellarObject : BaseEntity<Guid>
+    public class SubstellarObject : BaseEntity<Guid>, IAggregateRoot
     {
     }
 }

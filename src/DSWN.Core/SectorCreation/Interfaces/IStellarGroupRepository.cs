@@ -1,34 +1,33 @@
-﻿using DSWN.SharedKernel;
+﻿using DSWN.Core.SectorCreation.Entities.StellarGroupAggregate;
 using DSWN.SharedKernel.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DSWN.Core.SectorCreation.Interfaces
 {
-    public class IPlanetarySystemRepository : IRepository<Guid>
+    public class IStellarGroupRepository : IRepository<StellarGroup, Guid>
     {
-        public T Add<T>(T entity) where T : BaseEntity<Guid>
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete<T>(T entity) where T : BaseEntity<Guid>
+        public StellarGroup? GetById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public T GetById<T>(Guid id) where T : BaseEntity<Guid>
+        public void Insert(StellarGroup entity)
         {
             throw new NotImplementedException();
         }
 
-        public List<T> List<T>() where T : BaseEntity<Guid>
+        public IEnumerable<StellarGroup> List()
         {
             throw new NotImplementedException();
         }
 
-        public void Update<T>(T entity) where T : BaseEntity<Guid>
+        public void Update(StellarGroup entity)
         {
             throw new NotImplementedException();
         }

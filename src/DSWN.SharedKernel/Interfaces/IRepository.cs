@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using DSWN.Core.SectorCreation.Interfaces;
+using System.Collections.Generic;
 
 namespace DSWN.SharedKernel.Interfaces
 {
-    // source: https://github.com/ardalis/CleanArchitecture
-    public interface IRepository<TId> where TId : struct
+    public interface IRepository<TEntity, TId> where TEntity : BaseEntity<TId>, IAggregateRoot
     {
-        T GetById<T>(TId id) where T : BaseEntity<TId>;
-        List<T> List<T>() where T : BaseEntity<TId>;
-        T Add<T>(T entity) where T : BaseEntity<TId>;
-        void Update<T>(T entity) where T : BaseEntity<TId>;
-        void Delete<T>(T entity) where T : BaseEntity<TId>;
+        TEntity? GetById(TId id);
+        IEnumerable<TEntity> List();
+        void Insert(TEntity entity);
+        void Update(TEntity entity);
+        void Delete(TId id);
     }
 }
