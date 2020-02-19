@@ -1,16 +1,9 @@
 ﻿using DSWN.Core.SectorCreation.Enums;
 using DSWN.SharedKernel.UnitTests;
-using Xunit;
 
 namespace DSWN.Core.UnitTests.SectorCreation.Enums
 {
-    public class SystemTypeTests
+    public class SystemTypeTests : EnumTests<SystemType>
     {
-        [Fact]
-        public void Enum_DefinitionsShouldBeValid_WhenDefined()
-        {
-            EnumTests<SystemType>.Enum_ShouldNotHaveDuplicateIds();
-            EnumTests<SystemType>.Enum_ShouldHaveConsecutiveEnumIds();
-        }
     }
 }

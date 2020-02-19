@@ -1,13 +1,29 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace DSWN.SharedKernel.UnitTests
 {
     public abstract class EnumTests<T> where T : EnumClassBase<T>
     {
-        public static void Enum_ShouldNotHaveDuplicateIds()
+        private IEnumerable<int> ids;
+
+        public EnumTests()
         {
-            var ids = EnumClassBase<T>.GetIds();
+            ids = EnumClassBase<T>.GetIds();
+        }
+
+        [Fact]
+        public void Enum_ShouldStartWithZero()
+        {
+            var minId = ids.Min();
+
+            Assert.Equal(0, minId);
+        }
+
+        [Fact]
+        public void Enum_ShouldNotHaveDuplicateIds()
+        {
             var distinctIds = ids.Distinct().Count();
 
             var expected = ids.Count();
@@ -15,13 +31,12 @@ namespace DSWN.SharedKernel.UnitTests
             Assert.Equal(expected, distinctIds);
         }
 
-        public static void Enum_ShouldHaveConsecutiveEnumIds()
+        [Fact]
+        public void Enum_ShouldHaveConsecutiveEnumIds()
         {
-            var ids = EnumClassBase<T>.GetIds();
+            var idsAreConsecutive = TestHelpers.IsConsecutive(ids);
 
-            var isConsecutive = TestHelpers.IsConsecutive(ids);
-
-            Assert.True(isConsecutive);
+            Assert.True(idsAreConsecutive);
         }
     }
 }
