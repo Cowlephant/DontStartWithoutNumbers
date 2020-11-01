@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="xunit" Version="2.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\DSWN.Domain\DSWN.Domain.csproj" />
+        <ProjectReference Include="..\..\src\DSWN.SharedKernel\DSWN.SharedKernel.csproj" />
+        <ProjectReference Include="..\DSWN.SharedKernel.UnitTests\DSWN.SharedKernel.UnitTests.csproj" />
+    </ItemGroup>
+
+</Project>

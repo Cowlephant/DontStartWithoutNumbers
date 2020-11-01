@@ -25,13 +25,16 @@ namespace DSWN.SharedKernel
         public static T GetValue(string name) => GetValues().First(e => e.Name == name);
 
 #pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
         public static IReadOnlyList<T> GetValues()
         {
             // There are other ways to do that such as filling a collection in the constructor
+
             return typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Static)
                 .Select(property => (T)property.GetValue(null))
                 .ToList();
         }
+#pragma warning restore CS8619 // Nullability of reference types in value doesn't match target type.
 #pragma warning restore CS8601 // Possible null reference assignment.
 
         public static IEnumerable<int> GetIds()

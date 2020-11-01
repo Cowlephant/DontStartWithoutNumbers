@@ -11,6 +11,7 @@ namespace DSWN.SharedKernel
     {
         protected abstract IEnumerable<object> GetEqualityComponents();
 
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -23,6 +24,7 @@ namespace DSWN.SharedKernel
 
             return GetEqualityComponents().SequenceEqual(valueObject.GetEqualityComponents());
         }
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
 
         public object ShallowCopy()
         {
