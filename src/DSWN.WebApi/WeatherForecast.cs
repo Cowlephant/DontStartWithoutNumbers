@@ -1,6 +1,6 @@
 using System;
 
-namespace DSWN.Web
+namespace DSWN.WebApi
 {
     public class WeatherForecast
     {
